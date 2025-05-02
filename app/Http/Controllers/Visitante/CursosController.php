@@ -2,23 +2,23 @@
 
 namespace App\Http\Controllers\Visitante;
 use App\Http\Controllers\Controller;
+use App\Models\Curso;
+
 use Illuminate\Http\Request;
-use App\Models\Curso; // use seu model de cursos
 
-
-
-class VisitanteController extends Controller
+class CursosController extends Controller
 {
-      /**
-     * Lista de visitante
+    /**
+     * Display a listing of the resource.
      */
     public function index()
     {
-        return view('visitante.inicio'); // isso mostra a view 'resources/views/visitante/index.blade.php'
+        $cursos = Curso::all(); // ou algum outro método para obter cursos
+        return view('visitante.cursos', compact('cursos'));
     }
 
     /**
-     * Exibe formulário de cadastro de visitante
+     * Show the form for creating a new resource.
      */
     public function create()
     {
@@ -26,7 +26,7 @@ class VisitanteController extends Controller
     }
 
     /**
-     * Salva novo visitante
+     * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
@@ -34,7 +34,7 @@ class VisitanteController extends Controller
     }
 
     /**
-     * Detalhes do visitante.
+     * Display the specified resource.
      */
     public function show(string $id)
     {
@@ -42,7 +42,7 @@ class VisitanteController extends Controller
     }
 
     /**
-     * Formulário para editar visitante
+     * Show the form for editing the specified resource.
      */
     public function edit(string $id)
     {
@@ -50,7 +50,7 @@ class VisitanteController extends Controller
     }
 
     /**
-     * Atualiza visitante
+     * Update the specified resource in storage.
      */
     public function update(Request $request, string $id)
     {
@@ -58,7 +58,7 @@ class VisitanteController extends Controller
     }
 
     /**
-     * Remove visitante
+     * Remove the specified resource from storage.
      */
     public function destroy(string $id)
     {

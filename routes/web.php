@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Visitante\CursosController;
 use Illuminate\Support\Facades\Route;
 use PhpParser\Node\Expr\FuncCall;
 use App\Http\Controllers\Visitante\VisitanteController;
@@ -14,6 +15,7 @@ Route::get('/', function () {
 });*/
 
 Route::get('/visitante', [VisitanteController::class, 'index']);
+Route::get('/cursos',[CursosController::class, 'index']);
 
 
 
