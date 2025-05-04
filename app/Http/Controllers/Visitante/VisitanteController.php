@@ -7,8 +7,10 @@ use App\Models\Curso; // use seu model de cursos
 
 
 
+
 class VisitanteController extends Controller
 {
+
       /**
      * Lista de visitante
      */

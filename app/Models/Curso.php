@@ -6,6 +6,19 @@ use Illuminate\Database\Eloquent\Model;
 
 class Curso extends Model
 {
+
+    protected $fillable = [
+        'titulo',
+        'descricao',
+        'carga_horaria',
+        'data_inicio',
+        'data_fim',
+        'status',
+        'imagem'
+    ];
+    
+
+    
     // Se o nome da tabela for diferente de 'cursos', defina manualmente:
     // protected $table = 'nome_da_tabela';
 
@@ -15,3 +28,6 @@ class Curso extends Model
     // Se quiser definir quais colunas podem ser preenchidas em massa:
     // protected $fillable = ['titulo', 'descricao', 'imagem'];
 }
+
+
+

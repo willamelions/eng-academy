@@ -4,12 +4,30 @@ namespace App\Http\Controllers\Usuario;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class UsuarioController extends Controller
+class LoginController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
+    public function login(Request $request)
+{
+    $credentials = $request->only('email', 'password');
+
+    if (Auth::attempt($credentials)) {
+        $request->session()->regenerate();
+
+        // Redirecionar para cursos públicos
+        return redirect()->intended('/meus.cursos');
+    }
+
+    return back()->withErrors([
+        'email' => 'Credenciais inválidas.',
+    ]);
+}
+
+    
     public function index()
     {
         //
