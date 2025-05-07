@@ -2,35 +2,18 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>@yield('title', 'cursos')</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
     <title>@yield('title', 'cursos-publicos')</title>
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <style>
-        .navbar {
-            padding-top: 1.8rem;
-            padding-bottom: 1.8rem;
-        }
-
-        .navbar-brand,
-        .nav-link {
-            font-size: 1.8rem;
-        }
-    </style>
+    
 
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
+<nav class="navbar navbar-expand-lg navbar-dark px-4" style="background-color: #2a7d2e;">
+
     <div class="container-fluid">
         <a class="navbar-brand" href="{{ route('cursos.publicos') }}">Engemedical</a>
 

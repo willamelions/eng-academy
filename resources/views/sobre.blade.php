@@ -2,17 +2,28 @@
 
 @section('content')
 <div class="container mt-5">
-    <h1>Sobre a Engemedical</h1></br>
-    <h2><p> há mais de 10 anos no mercado como consultoria de saúde, segurança do trabalho e gestão ambiental. O que antes chamavamos
-de @aglaengenharia, hoje tornou-se engemedical©; uma empresa em expansão nacional, com clínica própria, e várias unidades
-no país. Possuimos profissionais especializados e constantemente treinados, o que nos permite oferecer aos nossos clientes o melhor custo x
-beneficio em serviços que abrangem todas as áreas de prevenção e melhorias em ambientes de trabalho. Nosso objetivo é sempre lhe 
-entregar o melhor serviço do mercado.</p></h2>
+    <div class="row align-items-center">
+        <!-- Texto à esquerda -->
+        <div class="col-md-7">
+            <h2 class="text-primary font-weight-bold">QUEM SOMOS</h2>
+            <p>
+                Somos agentes de transformação que desafiam a zona de conforto. Com uma atuação robusta em todo o Brasil, combinamos uma estrutura própria e uma vasta rede de credenciados para oferecer soluções personalizadas, ágeis e eficientes.
+            </p>
+            <p>
+                Nosso foco é proporcionar os mais altos padrões de qualidade e gestão, pois <strong>sabemos que o sucesso de uma empresa começa com a proteção do seu maior ativo: as pessoas.</strong>
+            </p>
+            <p>
+                Trabalhamos para garantir que cada trabalhador esteja em um ambiente seguro, saudável e pronto para alcançar seu máximo potencial, ao mesmo tempo em que <strong>resguardamos os interesses de nossos parceiros, assegurando a conformidade legal com as regulamentações vigentes no país.</strong>
+            </p>
+            <p>
+                Com orgulho, estamos entre as maiores empresas do país, resultado da nossa paixão e comprometimento em transformar realidades.
+            </p>
+        </div>
 
-<h1>Nós cuidamos de tudo para você!</h1></br>
-<h3><p> que uma empresa de sucesso se faz com colaboradores bem treinados, aptos e saudáveis. Faça as escolhas certas pra sua empresa e 
-    fique livre de multas. Contrate agora a nossa consultoria de segurança do trabalho nossa e mantenha-se sempre de acordo com as normas 
-    regulamentadoras.</p></h3></br>
-    <h2>Informações institucionais, missão, visão, etc.</h2>
+        <!-- Imagem à direita -->
+        <div class="col-md-5 text-center">
+            <img src="{{ asset('images/instrutor.png') }}" class="img-fluid rounded shadow" alt="Instrutor Técnico">
+        </div>
+    </div>
 </div>
 @endsection

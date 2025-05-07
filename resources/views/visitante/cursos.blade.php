@@ -1,11 +1,13 @@
 @extends('layouts.curso')
 
 @section('content')
-<div class="container-fluid bg-dark text-white p-5">
+<div class="container-fluid p-5" style="background-color: #ffffff; color: #006182;">
+
+
     <div class="row">
         <div class="col-md-8">
             <h1>Plataforma de Cursos Engemedical</h1>
-            <p>Cursos de Capacitação e Reciclagem!</p>
+            <h4>Cursos de Capacitação e Reciclagem!</h4>
         </div>
     </div>
 </div>

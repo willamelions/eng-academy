@@ -13,3 +13,14 @@
 .navbar-brand {
     font-weight: bold;
 }
+.btn-engemedical {
+    background-color: #006182;
+    color: white;
+    border: none;
+}
+
+.btn-engemedical:hover {
+    background-color: #004f66; /* tom mais escuro para hover */
+    color: white;
+}
+

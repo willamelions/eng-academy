@@ -1,3 +1,4 @@
+@php $ocultar_menu = true; @endphp
 @extends('layouts.visitante')
 
 @section('title', 'Pagamento do Curso')

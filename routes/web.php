@@ -3,8 +3,9 @@
 use App\Http\Controllers\Autenticacao\LoginController; // use correto!
 use App\Http\Controllers\Visitante\CursosController;
 use App\Http\Controllers\Visitante\VisitanteController;
-use Barryvdh\DomPDF\Facade\Pdf; // Se for usar DomPDF
+use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Support\Facades\Route;
+use Barryvdh\DomPDF\Facade\Pdf; // Se for usar DomPDF
 use App\Models\Curso;
 
 Route::get('/', function () {
@@ -19,10 +20,9 @@ Route::get('/cursos', [CursosController::class, 'index'])->name('visitante.curso
 //Rota COMPRA DE CURSOS
 Route::get('/curso/comprar/{id}', [CursosController::class, 'comprar'])->name('curso.comprar');
 
-//Geração do ARQUIVO PDF
+// Geração do ARQUIVO PDF
 Route::get('/boleto/pdf', function () {
-    // Exemplo simples de geração de PDF com DomPDF
-    $pdf = Pdf::loadView('boleto.pdf'); // Crie essa view
+    $pdf = Pdf::loadView('boleto'); // Corrigido: sem ".pdf"
     return $pdf->download('boleto.pdf');
 })->name('boleto.pdf');
 
@@ -67,6 +67,27 @@ Route::get('/cursos-publicos', [CursosController::class, 'publicos'])->name('cur
 //Route::get('/cursos-publicos', [CursosController::class, 'index'])->name('cursos-publicos');
 //Rota de DETALHE DO CURSO
 Route::get('/cursos/{id}/detalhes', [CursosController::class, 'detalhes'])->name('cursos.detalhes');
+
+// Redireciona para o Google
+Route::get('/login/google', function () {
+    return Socialite::driver('google')->redirect();
+})->name('login.google');
+
+// Callback após login com Google
+Route::get('/login/google/callback', function () {
+    $googleUser = Socialite::driver('google')->stateless()->user();
+
+    $user = User::firstOrCreate(
+        ['email' => $googleUser->getEmail()],
+        [
+            'name' => $googleUser->getName(),
+            'password' => bcrypt(Str::random(24)),
+        ]
+    );
+
+    Auth::login($user);
+    return redirect('/'); // redirecione para o dashboard ou home
+});
 
 /*Route::prefix('visitante')->group(function(){
     Route::get('inicio', function(){

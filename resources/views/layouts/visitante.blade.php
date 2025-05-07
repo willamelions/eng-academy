@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         body {
-            display: flex;
+            /* display: flex;  ⛔ REMOVER isso */
             min-height: 100vh;
             margin: 0;
         }
@@ -24,7 +24,7 @@
             display: block;
         }
         .sidebar a:hover {
-            background-color:rgb(7, 128, 21);
+            background-color:rgb(52, 64, 53);
         }
         .content {
             flex-grow: 1;
@@ -39,9 +39,37 @@
         .logo {
             height: 200px;
         }
+        
     </style>
 </head>
 <body>
+
+        <!-- layouts/visitante.blade.php ou layouts/app.blade.php -->
+        @if (empty($ocultar_menu))
+        <header class="navbar navbar-expand-lg bg-white shadow-sm py-3">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="/">
+                    <img src="{{ asset('images/logo-engemedical.png') }}" alt="Logo" style="height: 40px;">
+                    <span class="ms-2 fw-bold text-success">ENGEMEDICAL</span>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/sobre">A Engemedical</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/servicos">Serviços</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/cursos">Cursos</a></li>
+                        <li class="nav-item"><a class="btn btn-success text-white ms-3" href="{{ route('login') }}">Área do Cliente</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        @endif
+
 
     
 
